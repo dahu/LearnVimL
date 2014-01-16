@@ -225,87 +225,87 @@ Exercise Set 9: Builtin Float Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin List Functions
+Exercise Set 10: Builtin List Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Dictionary Functions
+Exercise Set 11: Builtin Dictionary Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Bitwise Functions
+Exercise Set 12: Builtin Bitwise Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Var Functions
+Exercise Set 13: Builtin Var Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Cursor and Mark Functions
+Exercise Set 14: Builtin Cursor and Mark Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Buffer Text Functions
+Exercise Set 15: Builtin Buffer Text Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin System and File Functions
+Exercise Set 16: Builtin System and File Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Date and Time Functions
+Exercise Set 17: Builtin Date and Time Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Buffer, Window, Tab and Arg Functions
+Exercise Set 18: Builtin Buffer, Window, Tab and Arg Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Command-line Functions
+Exercise Set 19: Builtin Command-line Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Quickfix Functions
+Exercise Set 20: Builtin Quickfix Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Completion Functions
+Exercise Set 21: Builtin Completion Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Folding Functions
+Exercise Set 22: Builtin Folding Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Syntax and Highlighting Functions
+Exercise Set 23: Builtin Syntax and Highlighting Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Spelling Functions
+Exercise Set 24: Builtin Spelling Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin History Functions
+Exercise Set 25: Builtin History Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Interactive Functions
+Exercise Set 26: Builtin Interactive Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin GUI Functions
+Exercise Set 27: Builtin GUI Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Server Functions
+Exercise Set 28: Builtin Server Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Window Size Functions
+Exercise Set 29: Builtin Window Size Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Miscellaneous Builtin Functions
+Exercise Set 30: Miscellaneous Builtin Functions
 --------------------------------------------------------------------------
 
 Read |map.txt|
@@ -315,32 +315,32 @@ Read |'maxmapdepth'| option
 Read |usr_40.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 9: Key Maps
+Exercise Set 31: Key Maps
 --------------------------------------------------------------------------
 
 Read |autocmd.txt|
 Read |filetype.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 10: Autocommands and Filetypes
+Exercise Set 32: Autocommands and Filetypes
 --------------------------------------------------------------------------
 
 Read |various.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 11: Autocommands, Redraw, Normal, and External Commands
+Exercise Set 33: Autocommands, Redraw, Normal, and External Commands
 --------------------------------------------------------------------------
 
 In regard to |:normal|, read |motion.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 12: Motions
+Exercise Set 34: Motions
 --------------------------------------------------------------------------
 
 Read |41.9| in |usr_41.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 12: Exceptions
+Exercise Set 35: Exceptions
 --------------------------------------------------------------------------
 
 Read |41.11| in |usr_41.txt|
@@ -348,19 +348,19 @@ Read |41.11| in |usr_41.txt|
 Install the Area41 plugin.
 
 --------------------------------------------------------------------------
-Exercise Set 12: Writing Normal Plugins
+Exercise Set 36: Writing Normal Plugins
 --------------------------------------------------------------------------
 
 Read |41.12| in |usr_41.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 12: Writing Filetype Plugins
+Exercise Set 37: Writing Filetype Plugins
 --------------------------------------------------------------------------
 
 Read |41.15| in |usr_41.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 12: Writing Library Scripts (autoload)
+Exercise Set 38: Writing Library Scripts (autoload)
 --------------------------------------------------------------------------
 
 Challenges~
