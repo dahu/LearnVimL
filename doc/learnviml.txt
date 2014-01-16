@@ -60,10 +60,22 @@ A SUGGESTED PATH FOR LEARNING VIML              *learnviml-suggested-path*
 
 Syntax~
 
+Before Vim, there was vi and it didn't have VimL as we know it today; it only
+had Ex. VimL extends Ex with a procedural expression language which provides
+looping constructs, conditional expressions and a rich expression language
+with versatile data structures like lists (dynamic arrays) and dictionaries
+(associative arrays, aka hashes/maps).
+
+Before we jump into all that goodness, though, we ought to look at bare Ex
+commands and the way they are invoked from within Vim.
+
 Read the following parts of |cmdline.txt|
 3. Ex command-lines         |cmdline-lines|
 4. Ex command-line ranges   |cmdline-ranges|
 6. Ex special characters    |cmdline-special|
+
+Throughout this tutorial we will follow up the reading sections with little
+quizes to make sure you're staying awake and keeping up.
 
 --------------------------------------------------------------------------
 Exercise Set 1: The Ex Language
@@ -114,8 +126,14 @@ Exercise Set 1: The Ex Language
 6.3 How do you pull the current <cword> up into the command-line?
 --------------------------------------------------------------------------
 
+While it is assumed that you know how to set and test options in Vim, there
+are several enhanced ways to play with options that you should brush up on.
+
 Read the following parts of |options.txt|
 1. Setting options          |set-option|
+
+In terms of writing VimL, there are around a dozen important options that
+influence how your scripts run and how happy you will be writing them.
 
 2. Read the following specific options:
 |'debug'|
@@ -175,11 +193,21 @@ Exercise Set 2: VimL-specific Options
     verbose option?
 --------------------------------------------------------------------------
 
+VimL has native support for inline regular expressions, similar to Perl. This
+makes VimL especially useful for manipulating text, a very common task for Vim
+scripts, naturally. Vim's flavour of regular expressions is not like Perl /
+PCRE, but it is nearly as powerful. In some cases, Vim provides even more
+expressiveness than Perl regexes. You can read about the differences in
+|perl-patterns|.
+
 Read all of |pattern.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 3: Using Regexes in VimL
+Exercise Set 3: Install and complete https://github.com/dahu/VimRegexTutor
 --------------------------------------------------------------------------
+
+Everything in |eval.txt| is new to Vim and constitutes the Expression Language
+portion of VimL.
 
 Read the following parts of |eval.txt|
 1. Variables                |variables|
