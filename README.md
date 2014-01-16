@@ -11,13 +11,13 @@ tutorials referenced within.
 Install
 -------
 
-.Linux / OS X:
+* **Linux / OS X:**
 
-Copy http://github.com/dahu/LearnVimL/raw/master/doc/learnviml.txt to your ~/.vim/doc/ directory.
+  Copy http://github.com/dahu/LearnVimL/raw/master/doc/learnviml.txt to your ~/.vim/doc/ directory.
 
-.Windows:
+* **Windows:**
 
-Copy http://github.com/dahu/LearnVimL/raw/master/doc/learnviml.txt to your $HOME\vimfiles\doc\ directory.
+  Copy http://github.com/dahu/LearnVimL/raw/master/doc/learnviml.txt to your $HOME\vimfiles\doc\ directory.
 
 Run  :helptags ~/.vim/doc/   from within Vim.
 Type :help learnviml   to get started.
