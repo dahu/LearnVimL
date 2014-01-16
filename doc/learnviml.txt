@@ -16,12 +16,13 @@ Exercises are blocked in lines of - characters.
 LEARNVIML TABLE OF CONTENTS                                *learnviml-toc*
 
 |learnviml-Introduction|
-|learnviml-Suggested-Path|
 |learnviml-Syntax|
 |learnviml-Builtin-Functions|
-|learnviml-OOP|
+|learnviml-Exceptions|
 |learnviml-Plugins|
-|learnviml-Extras|
+|learnviml-OOP|
+|learnviml-Functional(-ish)|
+|learnviml-Challenges|
 
 ##############################################################################
 INTRODUCTION                                      *learnviml-introduction*
@@ -56,9 +57,8 @@ wonderful world of VimL coding then see:
 
 If you're still with me, let's dive in:
 
-A SUGGESTED PATH FOR LEARNING VIML              *learnviml-suggested-path*
-
-Syntax~
+##############################################################################
+SYNTAX                                                  *learnviml-syntax*
 
 Before Vim, there was vi and it didn't have VimL as we know it today; it only
 had Ex. VimL extends Ex with a procedural expression language which provides
@@ -207,7 +207,9 @@ Exercise Set 3: Install and complete https://github.com/dahu/VimRegexTutor
 --------------------------------------------------------------------------
 
 Everything in |eval.txt| is new to Vim and constitutes the Expression Language
-portion of VimL.
+portion of VimL - the stuff that people expect when they think of a
+programming language: variables, conditionals, loops, functions, data types,
+etc. Finally we're getting a look at the real language behind VimL.
 
 Read the following parts of |eval.txt|
 1. Variables                |variables|
@@ -240,9 +242,14 @@ Read section |41.8| in |usr_41.txt|
 Exercise Set 7: Lists and Dictionaries, Object Oriented Programming
 --------------------------------------------------------------------------
 
-Builtin Functions~
+##############################################################################
+BUILTIN FUNCTIONS                            *learnviml-builtin-functions*
 
-Browse through |function-list|, Vim's built-in VimL library.
+Browse through the |function-list|, Vim's built-in VimL library containing
+more than 250 functions for working with strings, numbers, lists,
+dictionaries, buffers, windows, tabs, the arg-list, system commands, file
+operations, and many more of the Vim internals. The following exercises are
+designed to expose you to many of the useful functions in this library.
 
 --------------------------------------------------------------------------
 Exercise Set 8: Builtin String Functions
@@ -336,6 +343,11 @@ Exercise Set 29: Builtin Window Size Functions
 Exercise Set 30: Miscellaneous Builtin Functions
 --------------------------------------------------------------------------
 
+All good editors allow its users to override keyboard behaviour. Vim's maps
+provide key bindings for all of the different modes including operator pending
+mode which lets the Vim developer create custom motions, one of Vim's killer
+features.
+
 Read |map.txt|
 Read |map.txt|
 Read |'timeout'| option
@@ -346,6 +358,12 @@ Read |usr_40.txt|
 Exercise Set 31: Key Maps
 --------------------------------------------------------------------------
 
+Vim has a rich event system which is programmed through the autocommand
+interface. There are around eighty different events in various categories,
+like Reading & Writing files; manipulating Buffers, Windows and Tabs; changing
+Options; starting and closing Vim; Shell interaction; and tracking cursor
+movement and Insert Mode switching.
+
 Read |autocmd.txt|
 Read |filetype.txt|
 
@@ -353,11 +371,22 @@ Read |filetype.txt|
 Exercise Set 32: Autocommands and Filetypes
 --------------------------------------------------------------------------
 
+|:normal| is a very handy Ex command for issuing normal-mode commands from
+within a script as if they were typed. This is commonly used in user maps and
+functions that manipulate the buffer using Vim's native command mode.
+
 Read |various.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 33: Autocommands, Redraw, Normal, and External Commands
+Exercise Set 33: Redraw, Normal, and External Commands
 --------------------------------------------------------------------------
+
+One of Vim's killer features is Motions, the ability to manipulate entire
+textual clusters as single objects, moving between them, moving them, yanking
+and putting them, and visually selecting them for even more complicated
+operations. Happily, the Vim developer is also granted the power to create
+their own motions to provide these powerful editing benefits to their own
+users.
 
 In regard to |:normal|, read |motion.txt|
 
@@ -365,11 +394,29 @@ In regard to |:normal|, read |motion.txt|
 Exercise Set 34: Motions
 --------------------------------------------------------------------------
 
+##############################################################################
+EXCEPTIONS                                          *learnviml-Exceptions*
+
+Vim has a try/catch exception model that simplifies the handling of unexpected
+failures.
+
 Read |41.9| in |usr_41.txt|
 
 --------------------------------------------------------------------------
 Exercise Set 35: Exceptions
 --------------------------------------------------------------------------
+
+##############################################################################
+PLUGINS                                                *learnviml-Plugins*
+
+The rite of passage for any Vim developer is to create their own Plugin. Vim
+has hundreds of plugins providing incredibly diverse features and
+functionality never dreamed of by the original authors, Bill & Bram. In this
+section you will learn about the standard components of normal Vim plugins,
+but you will also install a helper plugin called Area41 which provides
+templates to save you the hassle of putting all the standard work into the
+creation of new plugins. This will let you create compliant plugins quickly,
+allowing you to focus on the important part - your code.
 
 Read |41.11| in |usr_41.txt|
 
@@ -379,11 +426,22 @@ Install the Area41 plugin.
 Exercise Set 36: Writing Normal Plugins
 --------------------------------------------------------------------------
 
+Every programming language you edit in Vim has a corresponding filetype plugin
+in the background which silently reconfigures the various Vim indentation,
+syntax, colouring and compilation options whenever you start editing a file of
+that type. Here you're going to learn how to write a filetype plugin of your
+own.
+
 Read |41.12| in |usr_41.txt|
 
 --------------------------------------------------------------------------
 Exercise Set 37: Writing Filetype Plugins
 --------------------------------------------------------------------------
+
+Big plugins benefit from being broken down into modular pieces. Resource
+hungry but seldom run plugins benefit from a load-on-demand launcher. Both of
+these techniques are provided by the same "autoload" Library architecture in
+Vim.
 
 Read |41.15| in |usr_41.txt|
 
@@ -391,7 +449,40 @@ Read |41.15| in |usr_41.txt|
 Exercise Set 38: Writing Library Scripts (autoload)
 --------------------------------------------------------------------------
 
-Challenges~
+##############################################################################
+OBJECT ORIENTED VIML                                       *learnviml-OOP*
+
+VimL uses a prototypal form of Object Oriented design, more similar to
+Javascript than class based systems like C++, Java, Python and Ruby.
+
+	*Todo	Show the two common architectures for VimLPOO
+	*Todo	Show inheritance
+
+##############################################################################
+FUNCTIONAL(-ISH) VIML                         *learnviml-Functional(-ish)*
+
+While VimL is strictly not a functional language, it does offer a few
+functional-ish functions that operate on its Lists and Dictionaries which
+provide clean and elegant alternatives to procedural solutions.
+
+Anonymous Functions~
+
+VimL does not natively offer anonymous functions but they can be simulated
+with the following helper functions:
+
+	*Todo	Insert the Fn() and Fx() helper functions.
+
+##############################################################################
+CHALLENGES                                          *learnviml-challenges*
+
+You now know most of the various pieces that constitute the VimL landscape.
+Well, you've -seen- them anyway. To know them, you're going to have to -use-
+them. What follows here is an increasingly involved set of challenges aimed at
+giving you that practice. Do them all or do the ones that catch your fancy.
+Design for yourself other challenges that require you to flex your newfound
+VimL muscles.
+
+	*Todo	these tasks have not been ordered by difficulty yet, and many more need to be added.
 
 . Write an autocommand that removes trailing whitespace from all lines in the
   buffer when the user exits insert mode.
