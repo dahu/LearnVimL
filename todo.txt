@@ -1,0 +1,9 @@
+* start early eval.txt exercises as simple one-liners
+* build up by giving function templates requiring learners to fill gaps
+* work up to having learners write multiple functions with calling between them
+* for more advanced sections, have:
+** nearly working functions that require fixups
+** problem statements requiring code solutions
+** case-studies of "good" real-world code (taken from some of the great plugins)
+
+
