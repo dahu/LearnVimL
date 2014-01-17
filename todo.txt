@@ -23,3 +23,7 @@ VimLPOO Outline
 ** show inheritance and polymorphism (http://of-vim-and-vigor.blogspot.com/2013/08/not-classy-vimlpoo.html)
 * show alternate way of object cretaion (a la NEERDTree)
 
+Functional(-ish) VimL Outline
+-----------------------------
+* show newviml ideas (http://of-vim-and-vigor.blogspot.com/search?q=newviml)
+* show anonymous functions (http://of-vim-and-vigor.blogspot.com/2014/01/anonymous-functions-in-viml.html)
