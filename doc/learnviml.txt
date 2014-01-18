@@ -243,9 +243,20 @@ etc. Finally we're getting a look at the real language behind VimL.
 Read from |variables| through to |sticky-type-checking| in |eval.txt| and
 sections |41.1| - |41.2| in |usr_41.txt|
 
+Read |char2nr()| , |str2nr()| , |str2float()| , and |printf()| for explicit
+ways to convert between Numbers and Strings in VimL.
+
 --------------------------------------------------------------------------
 Exercise Set 4: Variables
 
+1.0 How many types of variables does VimL support?
+1.1 Read |type()|. What is a better way to say:
+
+  if type(somevar) == 2
+
+1.2 How does VimL represent hexadecimal and octal numbers?
+
+What's the difference between |:set| and |:let| ?
 --------------------------------------------------------------------------
 
 Read |expression-syntax| in |eval.txt| and sections |41.3| in |usr_41.txt|
