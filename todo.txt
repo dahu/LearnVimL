@@ -8,24 +8,3 @@
 ** problem statements requiring code solutions
 ** case-studies of "good" real-world code (taken from some of the great plugins)
 
-it might make more sense for the eval.txt section to zip the
-two reading blocks together and explode them out by topic.
-Like:   Read |variables| and |41.1| - |41.2|   and then do
-some Variables exercises;   Read |expression-syntax| and
-|41.3| and then do some Expression exercises. - Basically,
-pairing the reference manual with the user-guide at each
-step.
-
-VimLPOO Outline
----------------
-[see ./scraps/vimlpoo.vim]
-* intro - prototypal, not class based
-* reference NERDTree and VimPEG as examples of VimLPOO in the wild
-* show simple factory method of object creation
-** show inheritance and polymorphism (http://of-vim-and-vigor.blogspot.com/2013/08/not-classy-vimlpoo.html)
-* show alternate way of object cretaion (a la NEERDTree)
-
-Functional(-ish) VimL Outline
------------------------------
-* show newviml ideas (http://of-vim-and-vigor.blogspot.com/search?q=newviml)
-* show anonymous functions (http://of-vim-and-vigor.blogspot.com/2014/01/anonymous-functions-in-viml.html)

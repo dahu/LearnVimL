@@ -211,35 +211,53 @@ portion of VimL - the stuff that people expect when they think of a
 programming language: variables, conditionals, loops, functions, data types,
 etc. Finally we're getting a look at the real language behind VimL.
 
-Read the following parts of |eval.txt|
-1. Variables                |variables|
-2. Expression syntax (skim) |expression-syntax|
-3. Internal variable        |internal-variables|
-5. Defining functions       |user-functions|
-7. Commands                 |expression-commands|
-9. Examples                 |eval-examples|
+Read |variables| in |eval.txt| and sections |41.1| - |41.2| in |usr_41.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 4: The Expression Language, Variables, Functions and Commands
+Exercise Set 4: Variables
 --------------------------------------------------------------------------
 
-Read sections |41.1| - |41.5| in |usr_41.txt|
+Read |expression-syntax| in |eval.txt| and sections |41.3| in |usr_41.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 5: VimL Control Structures, Variables, Expressions,
-                Conditionals, Logic Operators
+Exercise Set 5: Expressions
 --------------------------------------------------------------------------
 
-Read section |41.7| in |usr_41.txt|
+Read |internal-variables| in |eval.txt| and the subsequent entries on each
+internal variable type.
 
 --------------------------------------------------------------------------
-Exercise Set 6: Defining, Listing, Debugging and Deleting Functions
+Exercise Set 6: Internal Variables
+--------------------------------------------------------------------------
+
+Read |expression-commands| in |eval.txt| and section |41.4| in |usr_41.txt|
+
+--------------------------------------------------------------------------
+Exercise Set 7: Expression Commands (VimL Statements)
+--------------------------------------------------------------------------
+
+Read section |41.5| in |usr_41.txt|
+
+--------------------------------------------------------------------------
+Exercise Set 8: Executing Expressions
+--------------------------------------------------------------------------
+
+Read |user-functions| in |eval.txt| and section |41.7| in |usr_41.txt|
+
+--------------------------------------------------------------------------
+Exercise Set 9: Defining, Listing, Debugging and Deleting Functions
 --------------------------------------------------------------------------
 
 Read section |41.8| in |usr_41.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 7: Lists and Dictionaries, Object Oriented Programming
+Exercise Set 10: Lists and Dictionaries, Object Oriented Programming
+--------------------------------------------------------------------------
+
+Read |eval-examples| in |eval.txt|
+
+--------------------------------------------------------------------------
+Exercise Set 11: Intermediate Challenges
 --------------------------------------------------------------------------
 
 ##############################################################################
@@ -252,95 +270,95 @@ operations, and many more of the Vim internals. The following exercises are
 designed to expose you to many of the useful functions in this library.
 
 --------------------------------------------------------------------------
-Exercise Set 8: Builtin String Functions
+Exercise Set 12: Builtin String Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 9: Builtin Float Functions
+Exercise Set 13: Builtin Float Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 10: Builtin List Functions
+Exercise Set 14: Builtin List Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 11: Builtin Dictionary Functions
+Exercise Set 15: Builtin Dictionary Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 12: Builtin Bitwise Functions
+Exercise Set 16: Builtin Bitwise Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 13: Builtin Var Functions
+Exercise Set 17: Builtin Var Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 14: Builtin Cursor and Mark Functions
+Exercise Set 18: Builtin Cursor and Mark Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 15: Builtin Buffer Text Functions
+Exercise Set 19: Builtin Buffer Text Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 16: Builtin System and File Functions
+Exercise Set 20: Builtin System and File Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 17: Builtin Date and Time Functions
+Exercise Set 21: Builtin Date and Time Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 18: Builtin Buffer, Window, Tab and Arg Functions
+Exercise Set 22: Builtin Buffer, Window, Tab and Arg Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 19: Builtin Command-line Functions
+Exercise Set 23: Builtin Command-line Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 20: Builtin Quickfix Functions
+Exercise Set 24: Builtin Quickfix Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 21: Builtin Completion Functions
+Exercise Set 25: Builtin Completion Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 22: Builtin Folding Functions
+Exercise Set 26: Builtin Folding Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 23: Builtin Syntax and Highlighting Functions
+Exercise Set 27: Builtin Syntax and Highlighting Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 24: Builtin Spelling Functions
+Exercise Set 28: Builtin Spelling Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 25: Builtin History Functions
+Exercise Set 29: Builtin History Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 26: Builtin Interactive Functions
+Exercise Set 30: Builtin Interactive Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 27: Builtin GUI Functions
+Exercise Set 31: Builtin GUI Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 28: Builtin Server Functions
+Exercise Set 32: Builtin Server Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 29: Builtin Window Size Functions
+Exercise Set 33: Builtin Window Size Functions
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-Exercise Set 30: Miscellaneous Builtin Functions
+Exercise Set 34: Miscellaneous Builtin Functions
 --------------------------------------------------------------------------
 
 All good editors allow its users to override keyboard behaviour. Vim's maps
@@ -355,7 +373,7 @@ Read |'maxmapdepth'| option
 Read |usr_40.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 31: Key Maps
+Exercise Set 35: Key Maps
 --------------------------------------------------------------------------
 
 Vim has a rich event system which is programmed through the autocommand
@@ -368,7 +386,7 @@ Read |autocmd.txt|
 Read |filetype.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 32: Autocommands and Filetypes
+Exercise Set 36: Autocommands and Filetypes
 --------------------------------------------------------------------------
 
 |:normal| is a very handy Ex command for issuing normal-mode commands from
@@ -378,7 +396,7 @@ functions that manipulate the buffer using Vim's native command mode.
 Read |various.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 33: Redraw, Normal, and External Commands
+Exercise Set 37: Redraw, Normal, and External Commands
 --------------------------------------------------------------------------
 
 One of Vim's killer features is Motions, the ability to manipulate entire
@@ -391,7 +409,7 @@ users.
 In regard to |:normal|, read |motion.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 34: Motions
+Exercise Set 38: Motions
 --------------------------------------------------------------------------
 
 ##############################################################################
@@ -403,7 +421,7 @@ failures.
 Read |41.9| in |usr_41.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 35: Exceptions
+Exercise Set 39: Exceptions
 --------------------------------------------------------------------------
 
 ##############################################################################
@@ -423,7 +441,7 @@ Read |41.11| in |usr_41.txt|
 Install the Area41 plugin.
 
 --------------------------------------------------------------------------
-Exercise Set 36: Writing Normal Plugins
+Exercise Set 40: Writing Normal Plugins
 --------------------------------------------------------------------------
 
 Every programming language you edit in Vim has a corresponding filetype plugin
@@ -435,7 +453,7 @@ own.
 Read |41.12| in |usr_41.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 37: Writing Filetype Plugins
+Exercise Set 41: Writing Filetype Plugins
 --------------------------------------------------------------------------
 
 Big plugins benefit from being broken down into modular pieces. Resource
@@ -446,7 +464,7 @@ Vim.
 Read |41.15| in |usr_41.txt|
 
 --------------------------------------------------------------------------
-Exercise Set 38: Writing Library Scripts (autoload)
+Exercise Set 42: Writing Library Scripts (autoload)
 --------------------------------------------------------------------------
 
 ##############################################################################
@@ -454,6 +472,15 @@ OBJECT ORIENTED VIML                                       *learnviml-OOP*
 
 VimL uses a prototypal form of Object Oriented design, more similar to
 Javascript than class based systems like C++, Java, Python and Ruby.
+
+VimLPOO Outline
+---------------
+[see ./scraps/vimlpoo.vim]
+* intro - prototypal, not class based
+* reference NERDTree and VimPEG as examples of VimLPOO in the wild
+* show simple factory method of object creation
+** show inheritance and polymorphism (http://of-vim-and-vigor.blogspot.com/2013/08/not-classy-vimlpoo.html)
+* show alternate way of object cretaion (a la NEERDTree)
 
 	*Todo	Show the two common architectures for VimLPOO
 	*Todo	Show inheritance
@@ -464,6 +491,11 @@ FUNCTIONAL(-ISH) VIML                         *learnviml-Functional(-ish)*
 While VimL is strictly not a functional language, it does offer a few
 functional-ish functions that operate on its Lists and Dictionaries which
 provide clean and elegant alternatives to procedural solutions.
+
+Functional(-ish) VimL Outline
+-----------------------------
+* show newviml ideas (http://of-vim-and-vigor.blogspot.com/search?q=newviml)
+* show anonymous functions (http://of-vim-and-vigor.blogspot.com/2014/01/anonymous-functions-in-viml.html)
 
 Anonymous Functions~
 
