@@ -1,7 +1,7 @@
 let s:basedir = expand('<sfile>:p:h:h')
 let s:tmpname = get(s:, 'tmpname', tempname())
 if !isdirectory(s:tmpname)
-  mkdir(s:tmpname)
+  call mkdir(s:tmpname)
 endif
 
 function! Switch(name)
