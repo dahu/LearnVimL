@@ -10,7 +10,7 @@ tutorials referenced within.
 
 *LearnVimL*
 
-* is written _in_ Vim help format, so internal to Vim itself
+* is written _in_ Vim help format, internal to Vim itself
 * has comprehensive coverage of VimL, from basics to the gritty stuff with
   maps, :redir, plugins, etc.
 * relies heavily on the existing Vim documentation with assessment questions,

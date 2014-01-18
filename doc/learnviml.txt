@@ -5,6 +5,18 @@ set of readnig assignments and followup hands-on exercises. It is aimed
 primarily at existing programmers, however beginners can do the external
 tutorials referenced below.
 
+LearnVimL~
+
+* is written -in- Vim help format, internal to Vim itself
+* has comprehensive coverage of VimL, from basics to the gritty stuff with
+  maps, :redir, plugins, etc.
+* relies heavily on the existing Vim documentation with assessment questions,
+  exercises and challenges to reinforce learning
+* comes with a searchable set of sample code snippets covering the builtin
+  functions and idiomatic VimL
+* authored by a group of experienced VimL coders, each sharing their individual
+  skills, tips and tricks to rapidly steer you toward VimL excellence.
+
 This file is structured with the following conventions:
 
 CHAPTER HEADINGS are all caps and preceded by a line of # characters.
@@ -16,6 +28,7 @@ Exercises are blocked in lines of - characters.
 LEARNVIML TABLE OF CONTENTS                                *learnviml-toc*
 
 |learnviml-Introduction|
+|learnviml-Searchable-Samples|
 |learnviml-Syntax|
 |learnviml-Builtin-Functions|
 |learnviml-Exceptions|
@@ -25,7 +38,7 @@ LEARNVIML TABLE OF CONTENTS                                *learnviml-toc*
 |learnviml-Challenges|
 
 ##############################################################################
-INTRODUCTION                                      *learnviml-introduction*
+INTRODUCTION                                      *learnviml-Introduction*
 
 What is VimL? In simple terms, it's Vim's scripting language, but the full
 answer is a little more complicated than that. It's actually more than one
@@ -58,7 +71,23 @@ wonderful world of VimL coding then see:
 If you're still with me, let's dive in:
 
 ##############################################################################
-SYNTAX                                                  *learnviml-syntax*
+SEARCHABLE SAMPLES                          *learnviml-Searchable-Samples*
+                                            *:LVL* *LVL*
+
+When one of the authors first learnt to program it was with the wonderful
+Borland Turbo C compiler. One of the best things about Turbo C was that it
+came with extensive documentation for the standard C libraries. Each function
+had a complete standalone snippet showing its usage.
+
+In an attempt to emulate that excellence, LearnVimL comes with a builtin
+command, :LVL <term> which searches the bundled samples for the given term,
+displaying a title-list of matches. These matches are shown in the
+|location-list|, so presisng <enter> on a list item will open up the
+associated snippet in an editable buffer of its own. From there you can
+|:source| the code to see it run and play with it for better understanding.
+
+##############################################################################
+SYNTAX                                                  *learnviml-Syntax*
 
 Before Vim, there was vi and it didn't have VimL as we know it today; it only
 had Ex. VimL extends Ex with a procedural expression language which provides
@@ -211,10 +240,12 @@ portion of VimL - the stuff that people expect when they think of a
 programming language: variables, conditionals, loops, functions, data types,
 etc. Finally we're getting a look at the real language behind VimL.
 
-Read |variables| in |eval.txt| and sections |41.1| - |41.2| in |usr_41.txt|
+Read from |variables| through to |sticky-type-checking| in |eval.txt| and
+sections |41.1| - |41.2| in |usr_41.txt|
 
 --------------------------------------------------------------------------
 Exercise Set 4: Variables
+
 --------------------------------------------------------------------------
 
 Read |expression-syntax| in |eval.txt| and sections |41.3| in |usr_41.txt|
@@ -248,26 +279,41 @@ Read |user-functions| in |eval.txt| and section |41.7| in |usr_41.txt|
 Exercise Set 9: Defining, Listing, Debugging and Deleting Functions
 --------------------------------------------------------------------------
 
-Read section |41.8| in |usr_41.txt|
+Most modern scripting languages (from Awk onwards, if memory serves) offer
+arrays and associative arrays (also called hashes, maps or dictionaries)
+because many programming needs are adequately met with just these two data
+structures. VimL has these two data structures too, referring to them as Lists
+and Dictionaries respectively: Lists are integer indexed arrays, and
+Dictionaries are string indexed associative arrays.
+
+Read section |41.8| in |usr_41.txt| , but for now, skip over the Object
+Oriented part. This topic is covered later in *learnviml-OOP* .
 
 --------------------------------------------------------------------------
-Exercise Set 10: Lists and Dictionaries, Object Oriented Programming
+Exercise Set 10: Lists and Dictionaries
 --------------------------------------------------------------------------
 
 Read |eval-examples| in |eval.txt|
 
 --------------------------------------------------------------------------
 Exercise Set 11: Intermediate Challenges
+	*Todo	Using the |eval-examples| as inspiration, pose a set of
+	suitable challenges that exercise the expression language. If builtin
+	functions are required in the solutions, list them in a hints section.
 --------------------------------------------------------------------------
 
 ##############################################################################
-BUILTIN FUNCTIONS                            *learnviml-builtin-functions*
+BUILTIN FUNCTIONS                            *learnviml-Builtin-Functions*
 
 Browse through the |function-list|, Vim's built-in VimL library containing
 more than 250 functions for working with strings, numbers, lists,
 dictionaries, buffers, windows, tabs, the arg-list, system commands, file
 operations, and many more of the Vim internals. The following exercises are
-designed to expose you to many of the useful functions in this library.
+designed to expose you to many of the useful functions in this library. You
+don't have to do all of these exercises now; you could instead use this
+section as a type of reference manual practice-ground - a great place to spend
+some quality Deliberate Practice on a quiet Friday night. In that vein, keep
+in mind LearnVimL's built-in |:LVL| function for searching the code samples.
 
 --------------------------------------------------------------------------
 Exercise Set 12: Builtin String Functions
@@ -505,7 +551,7 @@ with the following helper functions:
 	*Todo	Insert the Fn() and Fx() helper functions.
 
 ##############################################################################
-CHALLENGES                                          *learnviml-challenges*
+CHALLENGES                                          *learnviml-Challenges*
 
 You now know most of the various pieces that constitute the VimL landscape.
 Well, you've -seen- them anyway. To know them, you're going to have to -use-
