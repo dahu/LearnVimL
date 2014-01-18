@@ -22,7 +22,7 @@ function! Init(pat)
   call setline(1, readfile(s:basedir . '/sample/recipe.vim'))
   let delimiter = '\m^"=\{4}'
   let pat = escape(a:pat, '/')
-  let get_cmd = '?' . delimiter . '?,/' . delimiter . '/-1 call ParseRecipe()'
+  let get_cmd = '?' . delimiter . '?;/' . delimiter . '/-1 call ParseRecipe()'
   let cmd = printf('g/%s/ %s', pat, get_cmd)
   exec cmd
   %delete _

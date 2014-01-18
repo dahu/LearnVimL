@@ -1,3 +1,5 @@
+* make saving & executing the LVL_recipe results easier/possible
+
 * start early eval.txt exercises as simple one-liners
 * build up by giving function templates requiring learners to fill gaps
 * work up to having learners write multiple functions with calling between them

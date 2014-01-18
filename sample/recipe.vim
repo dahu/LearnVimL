@@ -4,6 +4,11 @@ let foo = get(g:, 'bar', 1)
 "==== Switch a boolean option.
 set wrap!
 set invhlsearch
+"==== Set a complicated option
+set formatlistpat=^\\s\\d\\.\\s\\+
+" is better written as
+let &formatlistpat = '^\s\d\.\s\+'
+" on the command-line, use:   :let &flp = <c-r>=string(&flp)
 "==== Show the value of an option.
 set formatoptions?
 echo &formatoptions
