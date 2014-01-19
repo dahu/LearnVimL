@@ -21,7 +21,7 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-setl conceallevel=2
+setl conceallevel=2 concealcursor=nvic
 
 syn match LVLOdd /^+ .*$/ nextgroup=LVLEven
 syn match LVLEven /^* .*$/ nextgroup=LVLOdd
