@@ -29,7 +29,7 @@ let s:basedir = expand('<sfile>:p:h:h')
 
 " Options: {{{1
 " "learnviml_vert_index" Open Index window in a vertical split when 1.
-" "learnvim_vert_recipe" Open Recipe window in a vertical split when 1.
+" "learnviml_vert_recipe" Open Recipe window in a vertical split when 1.
 
 " Private Functions: {{{1
 
@@ -61,10 +61,44 @@ function! s:read_recipes()
   return recipes
 endfunction
 
-function! s:parse_recipe() range
-  let title = substitute(getline(a:firstline), '^"=\+\s*', '', '')
+function! s:criteria()
+  let c = {}
+  let c.title = []
+  call add(c.title, ['title =~# ''\m^"=\{4}\s\S''', 'The title line must start with a double quote followed by four equal signs (=) and a space.'])
+  call add(c.title, ['title =~# "\\m^\\A\\+\\u"', 'The title must start with a capital letter.'])
+  call add(c.title, ['title =~# "\\m\\.$"', 'The title must end with a period.'])
+  call add(c.title, ['title !~# "\\m\\s$"', 'The title must not end with trailing whitespace.'])
+  return c
+endfunction
+
+function! s:parse_recipe(...) range
   let body  = getline(a:firstline + 1, a:lastline)
-  call extend(s:recipes, {title : body})
+  if !a:0
+    let title = substitute(getline(a:firstline), '^"=\+\s*', '', '')
+    return extend(s:recipes, {title : body})
+  endif
+  let title = getline(a:firstline)
+  let criteria = s:criteria()
+  let recipe = getline(a:firstline, a:lastline)
+  let title = get(recipe, 0, '')
+  for [criterion, message] in criteria.title
+    if !eval(criterion)
+      call add(s:report, 'Line ' . a:firstline . ': ' . message)
+    endif
+  endfor
+  " TODO Is there something we can do with the recipe's body? maybe with
+  " lambda functions? :-D
+endfunction
+
+function! s:recipe_checker()
+  let s:report = []
+  g/\%^\|^"=/ .,/\n"=\|\%$/ call s:parse_recipe(1)
+  call s:switch_to('Report')
+  %delete _
+  if empty(&buftype)
+    setl buftype=nofile
+  endif
+  call setline(1, empty(s:report) ? 'No problem was found.' : s:report)
 endfunction
 
 function! s:handle_index_cursor()
@@ -96,12 +130,7 @@ function! s:get_index(pat)
   let delim = '"=\{4}\s*'
   let pat = '^' . delim . '\%(.*\n\%(' . delim . '\)\@!\)\{-1,}.\{-}\zs'
         \ . escape(a:pat, '/')
-  let cmd = printf('g/%s/ .;/^%s/-1 call s:parse_recipe()', pat, delim)
-  " TODO this could be faster but we need a bigger sample to test if it is
-  " even needed.
-  "let pat = '^\%(' . delim . '\)\@!.\{-}' . escape(a:pat, '/')
-  "let cmd = printf('g/%s/ ?^%s?;/^%s/-1 call s:parse_recipe()',
-  "      \ pat, delim, delim)
+  let cmd = printf('g/%s/ .;/\n%s\|\%%$/ call s:parse_recipe()', pat, delim)
   exec cmd
   %delete _
   let index = keys(s:recipes)
@@ -118,7 +147,8 @@ function! s:get_index(pat)
   if empty(&buftype)
     " One-time setup
     exec 'nnore <silent><buffer><CR> :<C-U>call s:get_recipe(getline("."))<CR>'
-    setl buftype=nofile ft=lvlindex noswapfile undolevels=100
+    exec 'inore <silent><buffer><CR> <Esc>:call s:get_recipe(getline("."))<CR>'
+    setl buftype=nofile ft=lvlindex noswapfile undolevels=0
   endif
   let &lazyredraw = saved_lazyredraw
   redraw
@@ -137,7 +167,7 @@ function! s:get_recipe(title)
   endif
   if &swapfile
     " One-time setup.
-    setl noswapfile ft=vim
+    setl noswapfile ft=vim undolevels=0
   endif
   silent write
   let &lazyredraw = saved_lazyredraw
@@ -155,7 +185,9 @@ endfunction
 
 " Commands: {{{1
 command! -nargs=+ LVL silent call s:get_index(<q-args>)
-command! LVLClose call s:close_lvl()
+command! LVLClose silent call s:close_lvl()
+command! LVLSyntaxChecker silent call s:recipe_checker()
+
 " Teardown: {{{1
 " reset &cpo back to users setting
 let &cpo = s:save_cpo
