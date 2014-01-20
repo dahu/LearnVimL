@@ -164,6 +164,11 @@ function! s:get_recipe(title)
   let saved_lazyredraw = &lazyredraw
   set lazyredraw
   call s:switch_to('Recipe')
+  if bufname('%') =~# 'Recipe$'
+    let &lazyredraw = saved_lazyredraw
+    redraw
+    return
+  endif
   %delete _
   let title = substitute(a:title, '^[+*]\s\+', '', '')
   let recipe = copy(get(s:recipes, title, []))
@@ -171,13 +176,11 @@ function! s:get_recipe(title)
     call insert(recipe, '" ' . title)
     call setline(1, recipe)
   endif
-  if &swapfile && bufname('%') =~# 'Recipe$'
+  if &swapfile
     " One-time setup.
     setl noswapfile ft=vim undolevels=0
   endif
-  if bufname('%') =~# 'Recipe$'
-    silent write
-  endif
+  silent write
   let &lazyredraw = saved_lazyredraw
   redraw
 endfunction
