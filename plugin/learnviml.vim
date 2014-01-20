@@ -36,7 +36,7 @@ let s:basedir = expand('<sfile>:p:h:h')
 
 function! s:switch_to(name)
   let prefix = 'LearnVimL_'
-  let name = prefix . a:name
+  let name = prefix . substitute(a:name, '^\a', '\u&', '')
   let bufnr = bufnr(name)
   let winnr = bufwinnr(bufnr)
   let dir_opt = get(g:, 'learnviml_split_dir_' . tolower(a:name), 'default')
@@ -152,8 +152,8 @@ function! s:get_index(pat)
   au LearnVimL CursorMoved <buffer> call s:handle_index_cursor()
   if empty(&buftype)
     " One-time setup
-    exec 'nnore <silent><buffer><CR> :<C-U>call s:get_recipe(getline("."))<CR>'
-    exec 'inore <silent><buffer><CR> <Esc>:call s:get_recipe(getline("."))<CR>'
+    exec 'nnore <silent><buffer><CR> :<C-U>call <SID>switch_to("Recipe")<CR>'
+    exec 'inore <silent><buffer><CR> <Esc>:call <SID>switch_to("Recipe")<CR>'
     setl buftype=nofile ft=lvlindex noswapfile undolevels=0
   endif
   let &lazyredraw = saved_lazyredraw
@@ -171,11 +171,13 @@ function! s:get_recipe(title)
     call insert(recipe, '" ' . title)
     call setline(1, recipe)
   endif
-  if &swapfile
+  if &swapfile && bufname('%') =~# 'Recipe$'
     " One-time setup.
     setl noswapfile ft=vim undolevels=0
   endif
-  silent write
+  if bufname('%') =~# 'Recipe$'
+    silent write
+  endif
   let &lazyredraw = saved_lazyredraw
   redraw
 endfunction
