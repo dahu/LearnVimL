@@ -28,22 +28,28 @@ set cpo&vim
 let s:basedir = expand('<sfile>:p:h:h')
 
 " Options: {{{1
-" "learnviml_vert_index" Open Index window in a vertical split when 1.
-" "learnviml_vert_recipe" Open Recipe window in a vertical split when 1.
+" "learnviml_split_dir_index" and "learnviml_split_dir_recipe" define on which
+" direction Vim should open every split. The accepted values for them are
+" "up", "down", "right" and "left".
 
 " Private Functions: {{{1
 
-function! s:switch_to(name, ...)
+function! s:switch_to(name)
   let prefix = 'LearnVimL_'
   let name = prefix . a:name
   let bufnr = bufnr(name)
   let winnr = bufwinnr(bufnr)
-  unsilent echom a:name . ': ' . a:0 ? a:1 : ''
-  let dir = a:0 && a:1 ? 'v' : ''
+  let dir_opt = get(g:, 'learnviml_split_dir_' . tolower(a:name), 'default')
+  let dir_dict = {'default' : '',
+        \         'up'      : 'aboveleft ',
+        \         'down'    : 'belowright ',
+        \         'right'   : 'rightbelow v',
+        \         'left'    : 'leftabove  v'}
+  let dir = get(dir_dict, dir_opt, '')
   if bufnr == -1
     exec dir . 'new ' . name
   elseif winnr == winnr()
-    " It's weird to be here. Just stay in this window and don't move.
+    " We are already here!
   elseif winnr > -1
     exec winnr . "wincmd w"
   else
@@ -118,7 +124,7 @@ endfunction
 function! s:get_index(pat)
   let s:recipes = {}
   let s:index_line = 0
-  call s:switch_to('Index', get(g:, 'learnviml_vert_index', 0))
+  call s:switch_to('Index')
   setl modifiable
   let saved_lazyredraw = &lazyredraw
   set lazyredraw
@@ -157,7 +163,7 @@ endfunction
 function! s:get_recipe(title)
   let saved_lazyredraw = &lazyredraw
   set lazyredraw
-  call s:switch_to('Recipe', get(g:, 'learnviml_vert_recipe', 0))
+  call s:switch_to('Recipe')
   %delete _
   let title = substitute(a:title, '^[+*]\s\+', '', '')
   let recipe = copy(get(s:recipes, title, []))
