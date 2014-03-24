@@ -4,7 +4,7 @@ let foo = get(g:, 'bar', 1)
 "==== Switch a boolean option.
 set wrap!
 set invhlsearch
-"==== Set a complicated option
+"==== Set a complicated option.
 set formatlistpat=^\\s\\d\\.\\s\\+
 " is better written as
 let &formatlistpat = '^\s\d\.\s\+'
@@ -16,4 +16,3 @@ echo &formatoptions
 echohl WarningMsg
 echom 'Some error happened. Please forgive me, I did not mean it.'
 echohl None
-"==== This is the end.
