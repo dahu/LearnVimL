@@ -398,7 +398,7 @@ and Dictionaries respectively: Lists are integer indexed arrays, and
 Dictionaries are string indexed associative arrays.
 
 Read section |41.8| in |usr_41.txt| , but for now, skip over the Object
-Oriented part. This topic is covered later in *learnviml-OOP* .
+Oriented part. This topic is covered later in |learnviml-OOP| .
 
 --------------------------------------------------------------------------
 Exercise Set 13: Lists and Dictionaries
