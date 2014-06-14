@@ -49,7 +49,7 @@ library of builtin functions for manipulating strings, floats, lists and
 dictionaries as well as Vim editor objects like buffers, windows, tabs and the
 myriad auxiliary entities surrounding them. It supports procedural,
 functional(-ish) and object-oriented approaches to software development. It may
-not be the prettiest language in the world, but it definietly gets the job
+not be the prettiest language in the world, but it definitely gets the job
 done.
 
 I intend here to walk you through the most important parts of the Vim Reference
@@ -65,7 +65,7 @@ wonderful world of VimL coding then see:
 * Damian Conway's Beginner's Guide to VimL:
   http://www.ibm.com/developerworks/linux/library/l-vim-script-1/index.html
 
-* Steve Lush's Learn VimL the Hard Way:
+* Steve Losh's Learn VimL the Hard Way:
   http://learnvimscriptthehardway.stevelosh.com/
 
 If you're still with me, let's dive in:
@@ -104,7 +104,7 @@ Read the following parts of |cmdline.txt|
 6. Ex special characters    |cmdline-special|
 
 Throughout this tutorial we will follow up the reading sections with little
-quizes to make sure you're staying awake and keeping up.
+quizzes to make sure you're staying awake and keeping up.
 
 --------------------------------------------------------------------------
 Exercise Set 1: The Ex Language
@@ -224,7 +224,7 @@ Exercise Set 2: VimL-specific Options
   :set ft=lisp
   :setf lisp
 
-1.12 What are the two commands which open the interactive options brwoser?
+1.12 What are the two commands which open the interactive options browser?
 
 3.0 When Vim is executing VimL in certain deeply nested situations, errors
     are often blindly ignored leaving the developer perplexed as to the
@@ -637,7 +637,7 @@ VimLPOO Outline
 * reference NERDTree and VimPEG as examples of VimLPOO in the wild
 * show simple factory method of object creation
 ** show inheritance and polymorphism (http://of-vim-and-vigor.blogspot.com/2013/08/not-classy-vimlpoo.html)
-* show alternate way of object cretaion (a la NEERDTree)
+* show alternate way of object creation (a la NEERDTree)
 
 	*Todo	Show the two common architectures for VimLPOO
 	*Todo	Show inheritance
